@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="input">
+        <fieldset form="input">
+        <legend> Enter a number between 2 and 10: </legend>
+        <label for="in1"></label>
+        <input type="text" id="in1" name="in1">
+        <label for="in2"></label>by
+        <input type="text" id="in2" name="in2"><br><br>  
+        <button onclick="main()"> Click here when ready! </button>
+        </fieldset>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        function main () {
+            var in1v = document.getElementById("in1").value;
+            var in2v = document.getElementById("in2").value;
+
+            if(in1v > 10 ||  in1v < 2  || in2v > 10 ||  in2v < 2){
+                alert("Please enter numbers between 2 and 10");
+            } else {
+                var table = "<table border ='1'>";
+                for(var i1 = 1; i1 <= in1v; i1++){
+                    table += "<tr>";
+
+                    for(var i2 = 1; i2 <= in2v; i2++){
+                        table += "<td>" + (i1 * i2) + "</td>"; 
+                    }
+                    table += "</tr>";
+                }
+                table += "</table>";
+            }
+
+               document.getElementById("output").innerHTML = table; 
+        }
+            </script>
+        </body>
+        </html>
+    
